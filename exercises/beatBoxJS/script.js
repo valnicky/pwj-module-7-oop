@@ -7,9 +7,9 @@
  *  Button pt3: Complete select function to set the color and shadow of button upon pressing
  *  Button pt4: Call the select() function upon key press ;)
  *  Button pt5: Add transition for button selection
- * TODO: Button pt6: Remove the button style upon transition end | Use deselect function
- * TODO: Complete all button instances with the following colors
- * TODO: Add background image
+ *  Button pt6: Remove the button style upon transition end | Use deselect function
+ * Complete all button instances with the following colors
+ *  Add background image
  * First 3: #00fffe
  * 4,5,6,7: #FF00FF
  * 8, 9: #FFFFFF
