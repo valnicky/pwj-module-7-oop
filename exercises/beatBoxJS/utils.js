@@ -13,8 +13,6 @@ class Beat {
     }
 }
 
-
-
 /**
  * Button class that keeps track of the button color based on a press
  */
@@ -24,6 +22,13 @@ class Button {
         this.keyCode = keyCode;
         this.element = document.getElementById(keyCode);
         this.setButtonColorInHTML();
+        this.setATransitionEndListener();
+    }
+
+    setATransitionEndListener = () => {
+        this.element.addEventListener('transitionend', () => {
+            this.deselect();
+        })
     }
 
     /**
@@ -38,10 +43,14 @@ class Button {
      */
     select = () => {
         this.element.style.backgroundColor = this.color;
+        this.element.style.boxShadow = `0px 0px 17px 0px ${this.color}`;
     }
 
     /**
      * Deselect function to reset background color and boxShadow
      */
-    deselect = () => {}
+    deselect = () => {
+        this.element.style.backgroundColor = "transparent";
+        this.element.style.boxShadow = "none";
+    }
 }

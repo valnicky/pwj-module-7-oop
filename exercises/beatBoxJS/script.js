@@ -4,9 +4,9 @@
  * Complete triggerBeat() to play upon the press of a,s,d,f,g,h,j,k,l
  *  Button pt1: Initialize color and element values
  *  Button pt2: Set button color upon initialization | Initialize button in beats["65"]
- * TODO: Button pt3: Complete select function to set the color and shadow of button upon pressing
- * TODO: Button pt4: Call the select() function upon key press ;)
- * TODO: Button pt5: Add transition for button selection
+ *  Button pt3: Complete select function to set the color and shadow of button upon pressing
+ *  Button pt4: Call the select() function upon key press ;)
+ *  Button pt5: Add transition for button selection
  * TODO: Button pt6: Remove the button style upon transition end | Use deselect function
  * TODO: Complete all button instances with the following colors
  * TODO: Add background image
@@ -22,27 +22,35 @@ let beats = {
     },
     83: {
         beat: new Beat("./assets/Piano Chord 209.mp3"),
+        button: new Button("#00fffe", 83)
     },
     68: {
         beat: new Beat("./assets/Piano Chord 208.mp3"),
+        button: new Button("#00fffe", 68)
     },
     70: {
         beat: new Beat("./assets/Drum Sticks Hit 3.mp3"),
+        button: new Button("#ff00ff", 70)
     },
     71: {
         beat: new Beat("./assets/Drum Snare Roll.mp3"),
+        button: new Button("#ff00ff", 71)
     },
     72: {
         beat: new Beat("./assets/PREL Musical 57.mp3"),
+        button: new Button("#ff00ff", 72)
     },
     74: {
         beat: new Beat("./assets/Cymbal Suspended 2.mp3"),
+        button: new Button("#ff00ff", 74)
     },
     75: {
         beat: new Beat("./assets/Musical Compos 33.mp3"),
+        button: new Button("#ffffff", 75)
     },
     76: {
         beat: new Beat("./assets/Musical Orches 4.mp3"),
+         button: new Button("#ffffff", 76)
     },
 };
 
@@ -53,7 +61,9 @@ let beats = {
 triggerBeat = (event) => {
     let keyCode = event.keyCode;
     if (keyCode in beats) {
-        beats[keyCode].beat.play();
+        let keyPress = beats[keyCode];
+        keyPress.beat.play();
+        keyPress.button.select();
     }
 }
 
