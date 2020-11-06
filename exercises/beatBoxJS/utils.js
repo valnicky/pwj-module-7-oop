@@ -22,7 +22,7 @@ class Button {
     constructor(color, keyCode) {
         this.color = color;
         this.keyCode = keyCode;
-        this.element = docuemnt.getElementById(keyCode);
+        this.element = document.getElementById(keyCode);
     }
 
     /**
